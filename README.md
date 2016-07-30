@@ -1,5 +1,5 @@
 
-* Date: 2016-07-26
+* Date: 2016-07-30
 * Creator: shuchengc
 
 ##Descritpion:
@@ -15,7 +15,10 @@ all the APIs are tested by postman.
 - update a review: PUT /api/reviews/id  //body data: username,content
 - delete a review: DELETE /api/reviews/id 
 - sign up a user: POST /api/signup	//body data: username,password
-- I add the basic auth strategy for the api, hence you should use the user signup api firstly to create authentication user and password for other APIs.
+－ create an user token: POST /api/token //body data: username,password
+- I add the json web token auth strategy for the api, hence you should use the user signup api firstly to create authentication user and password and get the valid json web token for APIs.
+- when you get the user token, you can use the token in the request body:req.body.token,
+request query: req.query.token, or setting the header['access-token']
 
 ###Data Models:
 review
